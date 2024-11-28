@@ -25,12 +25,12 @@ h1 {
     margin: 0 auto; 
     letter-spacing: .10em; 
     animation:
-            typing 3.5s steps(40, end),
-            blink-caret .75s step-end infinite;
+            typing 3.5s steps(40, end), /*La velocidad de escribir*/
+            blink-caret .75s step-end infinite; /*Controla el parpadeo del cursor*/
     }
 
   svg{
-    position:absolute;
+    position:absolute; /*retira el elemento del flujo normal, posicionando en relacion al su container mas cerca.*/
     right: 50px;
     margin-top: 6px;
   }
@@ -39,7 +39,7 @@ h1 {
     width: 150px;
     height: 150px;
     left: 5px;
-    position: relative;
+    position: relative; /*mantiene el elemento en el flujo normal de la pagina, sin afectar el layout alrededor*/
   }
 
   #back{
