@@ -1,5 +1,5 @@
-body{
-    background-color: black;
+body{ /*Fondo negro y las fuentes*/
+    background-color: black; 
     font-family: "Calibri", serif;
 }
 
@@ -15,7 +15,7 @@ h1 {
       blink-caret .75s step-end infinite;
   }
 
-.socialmidia{
+.socialmidia{ /* Efecto igual del titulo */
     transform: scale(1, 1.5);
     font-size: 40px;
     text-align: center;
@@ -52,7 +52,7 @@ h1 {
     text-align: justify;
   }
   
-  .volver{
+  .volver{ /*Botón para volver simple*/
     border-radius: 5px;
     background-color:#d3d3d3;
     color: black;
