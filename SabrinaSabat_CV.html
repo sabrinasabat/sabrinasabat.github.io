@@ -10,11 +10,11 @@
     </head>
     <body>
         <div class="container text-white text-center"><br>
-            <img src="deadpool1.jpg" class="rounded-circle border border-light" alt="Foto Perfil" width="204" height="200">
+            <img src="deadpool1.jpg" class="rounded-circle border border-light" alt="Foto Perfil" width="204" height="200"> <!-- rounded-circle para redondear el imagen-->
             <br><br><h1>Deadpool</h1>
             <br><br>
             <div class="container d-grid text-center">
-                <a class="btn btn-light btn-lg" href="SabrinaSabat_CV_Page2.html" role="button" onclick="playSoundWithRedirect(event, 'SabrinaSabat_CV_Page2.html')">
+                <a class="btn btn-light btn-lg" href="SabrinaSabat_CV_Page2.html" role="button" onclick="playSoundWithRedirect(event, 'SabrinaSabat_CV_Page2.html')"> <!--He utilizado el onclick para reproduzir el sonido antes de redirigir a otra pagina -->
                     SOBRE MÍ
                     <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
                 </a>
@@ -50,23 +50,23 @@
 
         <!-- Script -->
         <script>
-            function playSound() {
-                const audio = document.getElementById('soundEffect');
-                audio.currentTime = 0;
-                audio.play()
-                    .catch((error) => console.error('Erro ao reproduzir o som:', error));
+            function playSound() { //Reproduce el sonido sin cambiar de pagina
+                const audio = document.getElementById('soundEffect'); //He pillado el audio id y le puse en una constante
+                audio.currentTime = 0; //He puesto eso para se reincie el audio, o sea, al volver la pagina lo ejecute desde el principio
+                audio.play() //reproduzco el sonido con el método play
+                    .catch((error) => console.error('Erro ao reproduzir o som:', error)); //Si hay un error, que me enseñe
             }
 
-            function playSoundWithRedirect(event, url) {
-                event.preventDefault(); // Previne el sonido de imediato
+            function playSoundWithRedirect(event, url) { //Pone un pequeño retraso al hacer el sonido para cambiar de página
+                event.preventDefault(); //Previne el sonido de imediato y previne que el enlace cargue la pagina inmediatamente.
                 const audio = document.getElementById('soundEffect');
                 audio.currentTime = 0;
                 audio.play()
-                    .then(() => {
+                    .then(() => { //si la reproducion fue exitosa ejecuta lo que hay dentro del bloque
                         console.log('Som reproduzido, redirecionando...');
-                        setTimeout(() => {
+                        setTimeout(() => { 
                             window.location.href = url; //Redirecciona a la pagina después del sonido
-                        }, 300); //El tiempo de duracion
+                        }, 300); //espera 0.3 segundos antes de redireccionar la pagina
                     })
                     .catch((error) => console.error('Erro ao reproduzir o som:', error)); //Pillar el error si hay
             }
